@@ -1,0 +1,4 @@
+[submodule "Assets/WeaverCore"]
+	path = Assets/WeaverCore
+	url = https://github.com/nickc01/WeaverCore.git
+	branch = develop
