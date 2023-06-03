@@ -51,7 +51,8 @@ namespace MoreGodhomeSpace
         {
             try
             {
-                if (arg0.name == "GG_Workshop")
+                //NOTE: A scene can become invalid if a scene union occurs. This is why we need to check it here
+                if (arg0.name == "GG_Workshop" && arg0.IsValid())
                 {
                     foreach (var obj in arg0.GetRootGameObjects())
                     {
@@ -72,21 +73,21 @@ namespace MoreGodhomeSpace
                             obj.transform.SetScaleX(320.3779f);
                         }
                     }
-                }
 
-                var tilemapType = typeof(HeroController).Assembly.GetType("tk2dTileMap");
+                    var tilemapType = typeof(HeroController).Assembly.GetType("tk2dTileMap");
 
-                if (tilemapType != null)
-                {
-                    foreach (var obj in arg0.GetRootGameObjects())
+                    if (tilemapType != null)
                     {
-                        if (obj.TryGetComponent(tilemapType, out var component))
+                        foreach (var obj in arg0.GetRootGameObjects())
                         {
-                            //var widthField = tilemapType.GetField("width");
-                            var heightField = tilemapType.GetField("height");
+                            if (obj.TryGetComponent(tilemapType, out var component))
+                            {
+                                //var widthField = tilemapType.GetField("width");
+                                var heightField = tilemapType.GetField("height");
 
-                            heightField.SetValue(component, 93);
-                            break;
+                                heightField.SetValue(component, 93);
+                                break;
+                            }
                         }
                     }
                 }
