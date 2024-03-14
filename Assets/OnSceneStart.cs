@@ -72,6 +72,15 @@ namespace MoreGodhomeSpace
                             obj.transform.SetPositionX(129.9462f);
                             obj.transform.SetScaleX(320.3779f);
                         }
+                        else if (obj.name == "CameraLockArea (1)")
+                        {
+                            var lockArea = obj.GetComponent<CameraLockArea>();
+
+                            var box2D = lockArea.GetComponent<BoxCollider2D>();
+
+                            box2D.offset = new Vector2(0f, -3.224743f);
+                            box2D.size = new Vector2(30.55651f, 19.78f);
+                        }
                     }
 
                     var tilemapType = typeof(HeroController).Assembly.GetType("tk2dTileMap");

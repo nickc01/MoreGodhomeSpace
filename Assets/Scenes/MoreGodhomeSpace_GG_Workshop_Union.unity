@@ -4149,7 +4149,7 @@ MonoBehaviour:
   cameraYMin: 70.55
   cameraXMax: 172.4
   cameraYMax: 73.45
-  preventLookUp: 0
+  preventLookUp: 1
   preventLookDown: 1
   maxPriority: 0
 --- !u!61 &1502990458
@@ -6363,9 +6363,9 @@ MonoBehaviour:
   cameraYMin: 26.835045
   cameraXMax: 62.029778
   cameraYMax: 76.767944
-  preventLookUp: 0
+  preventLookUp: 1
   preventLookDown: 1
-  maxPriority: 0
+  maxPriority: 1
 --- !u!61 &2044419586
 BoxCollider2D:
   m_ObjectHideFlags: 0
